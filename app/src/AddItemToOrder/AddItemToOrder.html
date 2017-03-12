@@ -1,0 +1,11 @@
+<md-content class="md-padding" style="max-width: 400px;">
+
+    <form>
+        <!--($ctrl.item.price<=$ctrl.User.Credits)||-->
+        <md-button class="md-raised md-primary " ng-click="addToOrder($ctrl.item)" ng-if="($ctrl.item.price<=$ctrl.User.Credits)||showButton">Добавить</md-button>
+        <div class="ext-content" ng-if="$ctrl.item.price>$ctrl.User.Credits">>
+            Добавьте Кредитов на свой счет <span>{{currentNavItem}}</span>
+        </div>
+    </form>
+
+</md-content>

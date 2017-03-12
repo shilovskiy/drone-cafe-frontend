@@ -1,0 +1,81 @@
+<div layout-gt-sm="row">
+    <div class="col-md-9" ng-if="showuser">
+
+        <!--<div class="list-group">-->
+        <!--<div>ID<span style="background-color:yellow;" ng-bind="User._id"></span></div>-->
+        <!--<div>Name <span style="background-color:yellow;" ng-bind="User.Name"></span></div>-->
+        <!--<div>LName <span style="background-color:yellow;" ng-bind="User.LName"></span></div>-->
+        <!--<div>Credits <span style="background-color:yellow;" ng-bind="User.Credits"></span></div>-->
+
+        <!--</div>-->
+        <md-button class="md-raised" aria-label="User" ng-if="isloged">
+            {{User.LName}}
+        </md-button>
+
+        <md-button class="md-fab md-mini" aria-label="Credits" ng-if="isloged">
+            {{User.Credits}}
+        </md-button>
+
+        <!--<div class="padded" md-whiteframe="6"   flex-sm="45" flex-gt-sm="35" flex-gt-md="25" layout layout-align="center center">-->
+        <!--<span>md-whiteframe="6"</span>-->
+        <!--</div>-->
+
+        <form name="pokemonForm" novalidate ng-submit="submit(username,pass)" ng-if="!isloged">
+
+                <input ng-model="username" type="text" name="username" placeholder="Имя" required>
+
+
+
+            <input ng-model="pass" type="Email" name="pass" placeholder="Email" autofocus required>
+
+
+            <md-button class="md-raised" aria-label="User" type="submit" ng-disabled="pokemonForm.$invalid">
+                Вход
+            </md-button>
+
+            <div class="hint" ng-messages="pokemonForm.Email.$error" ng-if="pokemonForm.Email.$dirty">
+                В этом поле должен быть Email адрес
+            </div>
+
+
+        </form>
+    </div>
+
+    <!--<md-content layout="horisontal" flex id="content">-->
+    <!--<div layout="row" layout-align="center center" layout-fill>-->
+    <!--<md-whiteframe class="md-whiteframe-z1" layout="row" flex="200" layout-padding>-->
+    <!--<md-content md-theme="docs-dark">-->
+    <!--<md-input-container>-->
+    <!--<label>Email</label>-->
+    <!--<input ng-model="user.email">-->
+    <!--</md-input-container>-->
+    <!--<md-input-container>-->
+    <!--<label>Password</label>-->
+    <!--<input ng-model="user.password" type="password">-->
+    <!--</md-input-container>-->
+    <!--<md-input-container layout-align="center center">-->
+    <!--<div layout="row" layout-sm="column" layout-margin>-->
+    <!--<md-button class="md-raised" flex="50" flex-sm="100">Login</md-button>-->
+    <!--<md-button class="md-raised md-primary" flex="50" flex-sm="100">Register</md-button>-->
+    <!--</div>-->
+    <!--</md-input-container>-->
+    <!--</md-content>-->
+    <!--</md-whiteframe>-->
+    <!--</div>-->
+    <!--</md-content>-->
+
+
+    <!--<button class="btn btn-default" ng-click="addCredits()" ng-if="isloged">Добавить кредитов</button>-->
+    <md-button aria-label="showmethemoney" ng-click="addCredits()" ng-if="isloged">
+        Добавить $$$
+    </md-button>
+
+    <md-button aria-label="Exit" ng-click="logout()" ng-if="isloged">
+        Выход
+    </md-button>
+</div>
+
+<div class="col-md-8">
+
+</div>
+</div>
