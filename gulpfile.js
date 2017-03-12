@@ -16,6 +16,6 @@ gulp.task('webserver', function() {
      log:              'debug',
      clientConsole:    true,
      defaultFile:      'index.html',
-     fallback:  'app/index.html'
+       fallback: 'index.html'
    }));
 });

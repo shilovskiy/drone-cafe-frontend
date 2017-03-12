@@ -1,10 +1,12 @@
 {
-  "name": "drono cafe front",
+  "name": "drono-cafe-front",
   "version": "1.0.0",
   "description": "",
-  "main": "app/index.js",
+  "repository": "https://github.com/shilovskiy/drone-cafe-frontend.git",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "http-server -a localhost -p 8000 -c-1 ./app",
+    "test": "protractor tests/protractor.conf.js"
+
   },
   "author": "Oleg Shilovskiy",
   "license": "ISC",
@@ -20,7 +22,16 @@
     "lodash": "^4.16.3",
     "restangular": "1.5.2",
     "angular-socket-io": "^0.7.0",
-    "ngstorage":"0.3.11"
+    "ngstorage": "0.3.11",
+    "http-server": "^ 0.9.0",
+    "jasmine-core": "^2.4.1",
+    "karma": "^0.13.22",
+    "karma-chrome-launcher": "^0.2.3",
+    "karma-firefox-launcher": "^0.1.7",
+    "karma-jasmine": "^0.3.8",
+    "karma-junit-reporter": "^0.4.1",
+    "protractor": "^4.0.9"
+
 
   },
   "devDependencies": {
