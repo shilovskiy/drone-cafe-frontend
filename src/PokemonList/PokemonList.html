@@ -1,0 +1,58 @@
+<!--<div class="list-group">-->
+<!--<md-content>-->
+
+
+<!--<md-list flex>-->
+<!--&lt;!&ndash;order="$ctrl.order"&ndash;&gt;-->
+<!--<pokemon-list-item  item="singleItem" ng-repeat="singleItem in $ctrl.items"></pokemon-list-item>-->
+<!--</md-list>-->
+<!--</md-content>-->
+<!--</div>-->
+
+<div layout-gt-sm="row" layout="column" class="listdemoBasicUsage">
+
+    <div flex-gt-sm="50" flex="">
+
+        <md-toolbar layout="row" class="md-hue-3">
+            <div class="md-toolbar-tools">
+                <span>Меню</span>
+            </div>
+        </md-toolbar>
+
+        <md-content>
+
+            <md-list flex="">
+                <pokemon-list-item item="singleItem" ng-repeat="singleItem in $ctrl.items"></pokemon-list-item>
+                <md-list-item class="md-3-line" ng-repeat="orderItem in singleItem.items track by $index">
+                    <img ng-src="{{orderItem.item.image}}" class="md-avatar" alt="{{orderItem.item.title}}">
+                    <div class="md-list-item-text" layout="column">
+                        <h3>{{orderItem.item.title}}</h3>
+                        <h5>{{orderItem.item.ingredients.toString() }}</h5>
+                        <!--<p> {{orderItem.item.price}}</p>-->
+                    </div>
+
+                </md-list-item>
+
+                <md-divider></md-divider>
+
+            </md-list>
+        </md-content>
+    </div>
+
+    <md-divider></md-divider>
+
+    <div flex-gt-sm="50" flex="">
+
+        <md-toolbar layout="row" class="md-hue-3">
+            <div class="md-toolbar-tools">
+                <span>ЗАКАЗ</span>
+            </div>
+        </md-toolbar>
+
+        <md-content>
+            <order-info></order-info>
+        </md-content>
+
+    </div>
+
+</div>

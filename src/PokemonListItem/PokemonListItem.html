@@ -1,0 +1,13 @@
+<md-list-item class="md-3-line">
+    <img ng-src="{{$ctrl.item.image}}" class="md-avatar" alt="{{$ctrl.item.title}}">
+
+    <div class="md-list-item-text" layout="column">
+        <h3>{{$ctrl.item.title}}</h3>
+        <h5>{{$ctrl.item.ingredients.toString() }}</h5>
+        <p> {{$ctrl.item.price}}</p>
+    </div>
+
+    <add-item-to-order item="$ctrl.item"></add-item-to-order>
+
+</md-list-item>
+<md-divider></md-divider>

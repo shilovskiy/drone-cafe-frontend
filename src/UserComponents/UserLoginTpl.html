@@ -1,0 +1,51 @@
+<div layout-gt-sm="row">
+    <div class="col-md-9" ng-if="showuser">
+
+        <!--<div class="list-group">-->
+        <!--<div>ID<span style="background-color:yellow;" ng-bind="User._id"></span></div>-->
+        <!--<div>Name <span style="background-color:yellow;" ng-bind="User.Name"></span></div>-->
+        <!--<div>LName <span style="background-color:yellow;" ng-bind="User.LName"></span></div>-->
+        <!--<div>Credits <span style="background-color:yellow;" ng-bind="User.Credits"></span></div>-->
+
+        <!--</div>-->
+        <md-button class="md-raised" aria-label="User" ng-if="isloged">
+            {{User.LName}}
+        </md-button>
+
+        <md-button class="md-fab md-mini" aria-label="Credits" ng-if="isloged">
+            {{User.Credits}}
+        </md-button>
+
+
+        <form name="pokemonForm" novalidate ng-submit="submit(username,pass)" ng-if="!isloged">
+
+            <input ng-model="username" type="text" name="username" placeholder="Имя" required>
+
+
+            <input ng-model="pass" type="Email" name="pass" placeholder="Email" autofocus required>
+
+
+            <md-button class="md-raised" aria-label="User" ng-disabled="pokemonForm.$invalid">
+                Вход
+            </md-button>
+
+            <div class="hint" ng-messages="pokemonForm.Email.$error" ng-if="pokemonForm.Email.$dirty">
+                В этом поле должен быть Email адрес
+            </div>
+
+
+        </form>
+    </div>
+
+
+    <!--<button class="btn btn-default" ng-click="addCredits()" ng-if="isloged">Добавить кредитов</button>-->
+    <md-button aria-label="showmethemoney" ng-click="addCredits()" ng-if="isloged">
+        Добавить $$$
+    </md-button>
+
+    <md-button aria-label="Exit" ng-click="logout()" ng-if="isloged">
+        Выход
+    </md-button>
+</div>
+
+
