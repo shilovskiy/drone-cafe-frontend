@@ -1,6 +1,3 @@
-/**
- * Created by Олег Шиловский on 23.02.2017.
- */
 angular
     .module('DroneApp')
     .factory('UserService', function ($localStorage) {
