@@ -1,21 +1,21 @@
 'use strict';
 
-pokemonApp.component('pokemonList', {
+droneApp.component('pokemonList', {
 
-    controller: function PokemonListCtrl(PokemonsService, OrderService) {
+    controller: function PokemonListCtrl(MainService, OrderService) {
 
 
-        //this.pokemons = PokemonsService.query();
-        // this.items = PokemonsService.getPokemons();
+        //this.pokemons = MainService.query();
+        // this.items = MainService.getPokemons();
         //$scope.items= null;
         //this.order = OrderService;//{"_id":11222333};
-        PokemonsService.getPokemons().then((response) => {
+        MainService.getPokemons().then((response) => {
 
             this.items = response.data.items;
 
         });
 
-//        this.items = PokemonsService.query();
+//        this.items = MainService.query();
 
     },
 

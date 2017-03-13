@@ -3,7 +3,7 @@
  */
 'use strict';
 
-pokemonApp.component('orderInfo', {
+droneApp.component('orderInfo', {
     bindings: {
         // orderInformation:'<'
         // orderTotal:'<'
@@ -11,7 +11,7 @@ pokemonApp.component('orderInfo', {
     },
     templateUrl: './src/OrderServiceComponent/OrderServiceComponentTpl.html',
 
-    controller: function ($scope, OrderService, PokemonsService, UserService, $route, $localStorage) {
+    controller: function ($scope, OrderService, MainService, UserService, $route, $localStorage) {
 
         this.orderInformation = OrderService;
         this.orderLoading = (OrderService.Order == undefined);
@@ -21,7 +21,7 @@ pokemonApp.component('orderInfo', {
         $scope.canMakeOrder = (UserService.User != undefined);
 
         if (UserService.User != undefined) {
-            PokemonsService.getUserOrder(UserService.User._id).then(function (response) {
+            MainService.getUserOrder(UserService.User._id).then(function (response) {
                 console.log(response);
 
                 $scope.allUserOrders = response.data.Order;
@@ -31,7 +31,7 @@ pokemonApp.component('orderInfo', {
 
 
         $scope.removeFromOrder = function (itemData) {
-            PokemonsService.removeItemFromOrder(itemData, OrderService, UserService).then(function (response) {
+            MainService.removeItemFromOrder(itemData, OrderService, UserService).then(function (response) {
                 console.log(response);
 
                 if (UserService.User != undefined) {
@@ -44,7 +44,7 @@ pokemonApp.component('orderInfo', {
         };
 
         $scope.makeOrder = function () {
-            PokemonsService.pullOrderToProgress(OrderService, UserService, 'InProgress').then(function (response) {
+            MainService.pullOrderToProgress(OrderService, UserService, 'InProgress').then(function (response) {
                 console.log(response);
                 OrderService.setEmptyCurrentOrder();
             });

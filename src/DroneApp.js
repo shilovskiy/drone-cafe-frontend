@@ -1,6 +1,6 @@
-var pokemonApp = angular.module('PokemonApp', ['ngRoute', 'ngResource', 'restangular', 'ui.bootstrap', 'ngMaterial', 'ngStorage', 'btford.socket-io']);
+var droneApp = angular.module('DroneApp', ['ngRoute', 'ngResource', 'restangular', 'ui.bootstrap', 'ngMaterial', 'ngStorage', 'btford.socket-io']);
 
-angular.module('PokemonApp').run(function ($localStorage) {
+angular.module('DroneApp').run(function ($localStorage) {
 
     console.log('run PokemonApp and drone cafe application');
     //  $scope.$storage = $localStorage.$default({

@@ -2,7 +2,7 @@
  * Created by Олег Шиловский on 23.02.2017.
  */
 angular
-    .module('PokemonApp')
+    .module('DroneApp')
     .factory('UserService', function ($localStorage) {
 
         //this.User = $localStorage.CurrentUser;

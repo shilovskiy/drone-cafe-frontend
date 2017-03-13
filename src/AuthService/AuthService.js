@@ -2,7 +2,7 @@
  * Created by Олег Шиловский on 23.02.2017.
  */
 angular
-    .module('PokemonApp')
+    .module('DroneApp')
     .factory('AuthService', function (PokemonsService, $localStorage) {
 
         this.$storage = $localStorage.$default({

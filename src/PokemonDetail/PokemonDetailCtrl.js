@@ -1,10 +1,10 @@
 'use strict';
 
-pokemonApp.controller('PokemonDetailCtrl', function ($scope, $routeParams, PokemonsService) {
+droneApp.controller('PokemonDetailCtrl', function ($scope, $routeParams, MainService) {
 
     $scope.pokemonLoaded = false;
 
-    $scope.pokemon = PokemonsService.get({
+    $scope.pokemon = MainService.get({
         pokemonId: $routeParams['pokemonId']
     }, function (successResult) {
         // Окей!

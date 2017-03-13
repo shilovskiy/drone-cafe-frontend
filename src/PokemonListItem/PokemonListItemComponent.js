@@ -1,6 +1,6 @@
 'use strict';
 
-pokemonApp.component('pokemonListItem', {
+droneApp.component('pokemonListItem', {
 
     bindings: {
         item: '<'//, order:'<'

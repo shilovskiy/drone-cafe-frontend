@@ -4,7 +4,7 @@
  */
 'use strict';
 
-pokemonApp.component('userAuth', {
+droneApp.component('userAuth', {
     bindings: {
         //username:'=',
         // User:'='
@@ -12,7 +12,7 @@ pokemonApp.component('userAuth', {
     },
     templateUrl: './src/UserComponents/UserLoginTpl.html',
 
-    controller: function ($scope, PokemonsService, UserService, OrderService, $route, $localStorage, $q) {
+    controller: function ($scope, MainService, UserService, OrderService, $route, $localStorage, $q) {
 
         $scope.showuser = ($route.current.routeData.page != 'kitchen');
         $scope.User = UserService.User;
@@ -32,7 +32,7 @@ pokemonApp.component('userAuth', {
             }
             var obj1, obj2;
 
-            obj1 = PokemonsService.authUser(username, pass);
+            obj1 = MainService.authUser(username, pass);
 
             $q.all(
                 [obj1]
@@ -42,7 +42,7 @@ pokemonApp.component('userAuth', {
                 $scope.User = UserService.User;
 
                 if ((OrderService.Order != undefined) && (UserService.User != undefined)) {
-                    PokemonsService.setCurrentUserCurrentOrder(values[0].data, OrderService).then(function (response) {
+                    MainService.setCurrentUserCurrentOrder(values[0].data, OrderService).then(function (response) {
                         OrderService.setCurrentOrder(response.data);
                     });
                 }
@@ -58,7 +58,7 @@ pokemonApp.component('userAuth', {
         };
 
         $scope.addCredits = function (amount = 100) {
-            PokemonsService.addCreditsToCurrentUser(UserService.User, amount).then(function (response) {
+            MainService.addCreditsToCurrentUser(UserService.User, amount).then(function (response) {
                 UserService.setCurrentUser(response.data);
 
                 $scope.User = response.data;

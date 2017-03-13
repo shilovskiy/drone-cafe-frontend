@@ -1,6 +1,6 @@
 'use strict';
 
-pokemonApp.controller('EditPokemonCtrl', function ($scope, Restangular, $routeParams) {
+droneApp.controller('EditPokemonCtrl', function ($scope, Restangular, $routeParams) {
 
     Restangular.one('pokemon', $routeParams['pokemonId']).get().then(function (response) {
         $scope.pokemon = response

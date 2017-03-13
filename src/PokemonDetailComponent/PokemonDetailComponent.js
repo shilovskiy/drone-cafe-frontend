@@ -1,12 +1,12 @@
 'use strict';
 
-pokemonApp.component('pokemonDetail', {
+droneApp.component('pokemonDetail', {
 
-    controller: function ($routeParams, PokemonsService) {
+    controller: function ($routeParams, MainService) {
         var thisctrl = this;
         this.pokemonLoaded = false;
 
-        this.pokemon = PokemonsService.get({
+        this.pokemon = MainService.get({
             pokemonId: $routeParams['pokemonId']
         }, function (successResult) {
             // Окей!

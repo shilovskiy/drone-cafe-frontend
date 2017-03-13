@@ -2,8 +2,8 @@
  * Created by Олег Шиловский on 23.02.2017.
  */
 angular
-    .module('PokemonApp')
-    .factory('OrderService', function (PokemonsService, $localStorage) {
+    .module('DroneApp')
+    .factory('OrderService', function (MainService, $localStorage) {
         //var Order;
 
         this.$storage = $localStorage.$default({
@@ -15,7 +15,7 @@ angular
             Order = $localStorage.CurrentOrder;
             this.Order = $localStorage.CurrentOrder;
 
-            PokemonsService.getOrder($localStorage.CurrentOrder._id).then((response) => {
+            MainService.getOrder($localStorage.CurrentOrder._id).then((response) => {
                 this.Order = response.data.Order;
             });
         }
