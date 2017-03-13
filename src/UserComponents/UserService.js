@@ -11,9 +11,6 @@ angular
             this.User = $localStorage.CurrentUser;
 
 
-            // PokemonsService.getOrder($localStorage.CurrentOrder._id).then((response) => {
-            //     this.Order = response.data.Order;
-            // });
         }
         return {
             User: this.User,
