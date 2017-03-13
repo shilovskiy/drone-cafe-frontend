@@ -3,10 +3,6 @@ var droneApp = angular.module('DroneApp', ['ngRoute', 'ngResource', 'restangular
 angular.module('DroneApp').run(function ($localStorage) {
 
     console.log('run PokemonApp and drone cafe application');
-    //  $scope.$storage = $localStorage.$default({
-    //      CurrentOrder: 0
-    // });
-    //$scope.$storage.CurrentOrder =0;
 })
     .config(['$routeProvider', 'RestangularProvider',
         function config($routeProvider, RestangularProvider) {
