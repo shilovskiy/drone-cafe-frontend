@@ -1,6 +1,6 @@
 angular
-    .module('PokemonApp')
-    .factory('PokemonsService', function ($http) {
+    .module('DroneApp')
+    .factory('MainService', function ($http) {
 
             return {
                 authUser: function (_username, _pass) {

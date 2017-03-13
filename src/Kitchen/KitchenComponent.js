@@ -3,7 +3,7 @@
  */
 'use strict';
 
-pokemonApp.component('kitchenInfo', {
+droneApp.component('kitchenInfo', {
     bindings: {
         // orderInformation:'<'
         // orderTotal:'<'
@@ -11,7 +11,7 @@ pokemonApp.component('kitchenInfo', {
     },
     templateUrl: './src/Kitchen/KitchenComponentTpl.html',
 
-    controller: function ($scope, PokemonsService) {
+    controller: function ($scope, MainService) {
 
         $scope.orderInProgressFilter = function (item, state) {
             return item.state.Name == 'InProgress';
@@ -20,14 +20,14 @@ pokemonApp.component('kitchenInfo', {
             return item.state.Name == 'Ready';
         };
 
-        PokemonsService.getAllOrder().then(function (response) {
+        MainService.getAllOrder().then(function (response) {
 
             $scope.orderInformation = response.data.Order;
         });
         $scope.orderLoading = (this.orderInformation == undefined);
 
         $scope.removeFromOrder = function (itemData) {
-            PokemonsService.removeItemFromOrder(itemData, OrderService, UserService).then(function (response) {
+            MainService.removeItemFromOrder(itemData, OrderService, UserService).then(function (response) {
                 console.log(response);
                 UserService.User.Credits = UserService.User.Credits + itemData.item.price;
                 OrderService.setCurrentOrder(response.data);
@@ -36,9 +36,9 @@ pokemonApp.component('kitchenInfo', {
         };
 
         $scope.setOrderReady = function (order) {
-            PokemonsService.pullOrderToProgress(order, {User: {_id: order.user}}, 'Ready').then(function (response) {
+            MainService.pullOrderToProgress(order, {User: {_id: order.user}}, 'Ready').then(function (response) {
                 console.log(response);
-                PokemonsService.getAllOrder().then(function (response) {
+                MainService.getAllOrder().then(function (response) {
 
                     $scope.orderInformation = response.data.Order;
                 });
@@ -46,9 +46,9 @@ pokemonApp.component('kitchenInfo', {
         };
 
         $scope.setOrderToDelivery = function (order) {
-            PokemonsService.pullOrderToProgress(order, {User: {_id: order.user}}, 'InDelivery').then(function (response) {
+            MainService.pullOrderToProgress(order, {User: {_id: order.user}}, 'InDelivery').then(function (response) {
                 console.log(response);
-                PokemonsService.getAllOrder().then(function (response) {
+                MainService.getAllOrder().then(function (response) {
 
                     $scope.orderInformation = response.data.Order;
                 });
