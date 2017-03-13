@@ -5,3 +5,9 @@
 
 1. npm install
 2. gulp webserver
+
+
+https://github.com/shilovskiy/drone-cafe-frontend
+
+https://github.com/shilovskiy/DroneCafe-backend
+
