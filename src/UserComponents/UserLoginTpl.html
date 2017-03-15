@@ -1,18 +1,11 @@
 <div layout-gt-sm="row">
     <div class="col-md-9" ng-if="showuser">
 
-        <!--<div class="list-group">-->
-        <!--<div>ID<span style="background-color:yellow;" ng-bind="User._id"></span></div>-->
-        <!--<div>Name <span style="background-color:yellow;" ng-bind="User.Name"></span></div>-->
-        <!--<div>LName <span style="background-color:yellow;" ng-bind="User.LName"></span></div>-->
-        <!--<div>Credits <span style="background-color:yellow;" ng-bind="User.Credits"></span></div>-->
-
-        <!--</div>-->
-        <md-button class="md-raised" aria-label="User" ng-if="isloged">
+        <md-button class="md-raised" aria-label="User" id="LName" ng-if="isloged">
             {{User.LName}}
         </md-button>
 
-        <md-button class="md-fab md-mini" aria-label="Credits" ng-if="isloged">
+        <md-button class="md-fab md-mini" id="userCredits" aria-label="Credits" ng-if="isloged">
             {{User.Credits}}
         </md-button>
 
@@ -25,7 +18,8 @@
             <input ng-model="pass" type="Email" name="pass" placeholder="Email" autofocus required>
 
 
-            <md-button class="md-raised" type="submit" aria-label="User" ng-disabled="pokemonForm.$invalid">
+            <md-button id="loginbutton" class="md-raised" type="submit" aria-label="User"
+                       ng-disabled="pokemonForm.$invalid">
                 Вход
             </md-button>
 
@@ -38,7 +32,6 @@
     </div>
 
 
-    <!--<button class="btn btn-default" ng-click="addCredits()" ng-if="isloged">Добавить кредитов</button>-->
     <md-button aria-label="showmethemoney" ng-click="addCredits()" ng-if="isloged">
         Добавить $$$
     </md-button>
