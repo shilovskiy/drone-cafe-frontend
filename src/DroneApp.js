@@ -40,7 +40,7 @@ angular.module('DroneApp').run(function ($localStorage) {
             //"secret-key": "CB6DE86C-6069-86C4-FF1C-9049D5AC9400"
             //"Access-Control-Allow-Origin": "http://localhost:3000",
             //"Access-Control-Allow-Methods": "POST, GET, OPTIONS, HEAD",
-            "curent-user": "undefined"
+            //"curent-user": "undefined"
         };
 
     }]);
